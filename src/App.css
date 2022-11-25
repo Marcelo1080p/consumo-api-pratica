@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    min-height: 100vh;
+    background-color: #000014;
+    justify-content: center;
+}
+
+.containerPersonagens {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 250px;
+    height: 300px;
+    border-radius: 20px;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    background-color: green;
+    height: 320px;
+    width: 50px;
+    transform: rotate(10px);
+}
+
+.container img {
+    width: 150px;
+}

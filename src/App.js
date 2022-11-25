@@ -13,14 +13,18 @@ function App() {
 
   return (
     <div className="App">
-      {showCharacter.map((person) => (
-        <div className='container'>
-          <p>{person.name}</p>
-          <p>{person.status}</p>
-          <p>{person.species}</p>
-          <p>{person.type}</p>
-        </div>
-      ))}
+      <div className='containerPersonagens'>
+        {showCharacter.map((person) => (
+          <div className='container'>
+            <img src={person.image} alt={`Personagem ${person.name}`}/>
+            <p>{person.name}</p>
+            <p>{person.status}</p>
+            <p>{person.species}</p>
+            <p>{person.type}</p>
+          </div>
+        ))}
+
+      </div>
     </div>
   );
 }
