@@ -7,37 +7,83 @@
 .App {
     min-height: 100vh;
     background-color: #000014;
-    justify-content: center;
+    
 }
 
 .containerPersonagens {
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    padding: 1rem;
 }
 
-.container {
+.box {
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid #320139;
     width: 250px;
     height: 300px;
     border-radius: 20px;
+    overflow: hidden;
 }
-.container::before {
+.box::before {
     content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: animeRotate 5s infinite linear;
     position: absolute;
-    background-color: green;
-    height: 320px;
+    background: linear-gradient(#E75590, #00C2Cb);
+    filter: blur(10px);
+    height: 400px;
     width: 50px;
-    transform: rotate(10px);
 }
 
-.container img {
-    width: 150px;
+.box span {
+    position: absolute;
+    border: 1px solid #320139;
+    background-color: #000014;
+    height: 285px;
+    width: 235px;
+    inset: 5px;
+    border-radius: 15px;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.box section {
+    position: relative;
+    z-index: 2;
+    height: 285px;
+    width: 235px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.containerPersonagens section img {
+    width: 100px;
+}
+.containerPersonagens section .details {
+    color: #fff;
+    border: 1px solid #FFF;
+    text-align: center;
+    width: 90%;
+    height: 50%;
+}
+
+
+@keyframes animeRotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
