@@ -6,7 +6,8 @@ const api = axios.create({
 })
 
 const personagem = () => {
-    return api.get("/character").then((res) => res.data.results)
+    return api.get("/character").then((res) => res.data)
+    
 }
 
 export {personagem}

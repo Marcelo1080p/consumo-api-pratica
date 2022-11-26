@@ -37,7 +37,7 @@
     justify-content: center;
     animation: animeRotate 5s infinite linear;
     position: absolute;
-    background: linear-gradient(#E75590, #00C2Cb);
+    background: linear-gradient(#f3e2e8, #5e405f);
     filter: blur(10px);
     height: 400px;
     width: 50px;
