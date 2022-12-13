@@ -2,24 +2,8 @@ import { useState, useEffect } from "react";
 import { personagem } from "./api/api";
 import "./App.css";
 import axios from "axios";
-/*  const getAllCharacters = () => {
-    axios
-      .get(https://rickandmortyapi.com/api/character/, {
-        params: {
-          name: nome,
-          gender: gender,
-          status: status
-        },
-      })
-      .then((res) => setCharacters(res.data.results))
-      .catch((err) => {
-        if (err.message === 'Request failed with status code 404') {
-          window.alert("Não encontrado...")
-        }
+import InputPesquisa from "./components/InputPesquisa/index.js";
 
-        console.log(JSON.stringify(err?.message));
-      });
-  };  */
 function App() {
   const [showCharacter, setShowCharacter] = useState([]);
   const [carregando, setCarregando] = useState(false);
@@ -64,18 +48,20 @@ function App() {
 
   return (
     <div className="App">
-     
-      <input
+
+      <InputPesquisa
         name="nome"
         id="nome"
-        onChange={(e) => setNome(e.target.value)}
-        className="inputPesquisa" 
-        type="text" 
+        value={nome}
+        type="text"
+
         placeholder="Pesquise por um personagem"
+        aoAlterado={valor => setNome(valor)}
       />
+      
       <div className="containerPersonagens">
         {showCharacter.map((person) => (
-          <div className="box">
+          <div className="box" key={person.name}>
             <span></span>
             <section>
               <img src={person.image} alt={`Personagem ${person.name}`} />          
