@@ -8,4 +8,12 @@ const personagem = () => {
   return api.get("/character").then((res) => res.data);
 };
 
+/*/const getAllCharacters = (props) => {
+  return api.get("/character/", {
+    params: {
+      name: props.nome
+    }
+  })
+}*/
+
 export { personagem };
